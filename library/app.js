@@ -16,7 +16,7 @@ app.use('/js', express.static(path.join(__dirname, '/node_modules/jquery/dist'))
 app.set('views','./src/views');
 app.set('view engine','pug');
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', { List: ['a','b','c'] });
 });
 app.listen(port, () => {
   debug(`listening on port ${chalk.green(port)}`);
